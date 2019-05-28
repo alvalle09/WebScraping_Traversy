@@ -9,10 +9,26 @@ request('https://johnpapa.net/', (error, response, html) => {
         const $ = cheerio.load(html);
 
         const siteHeading = $('.post_head');
+        const blogDescription = $('.blog_description');
         //console.log(siteHeading.html()); 
-        //console.log(siteHeading.text());    
+        //console.log(blogDescription.text());    
 
-        const ouptut = siteHeading.find('h1').text();
-        console.log(ouptut);
+        //const ouptut = siteHeading.find('h1').text();
+        //const ouptut = siteHeading.children('h1').text();
+        // const output = siteHeading.children('h1')
+        //     .next()
+        //     .text();
+
+        // const descOutput = blogDescription.children('p')
+        //     .next()
+        //     .text();
+        //console.log(descOutput);
+
+        $('.navMenu_list a').each((i, el) => {
+            const item = $(el).text();
+
+            console.log(item);
+        });
+
     }
 });
