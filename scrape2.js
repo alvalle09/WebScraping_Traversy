@@ -8,10 +8,13 @@ request("https://johnpapa.net/", (error, response, html) => {
     $(".post_head").each((i, el) => {
       const title = $(el)
         .find(".post_title")
-        .text();
+        .text()
+        .replace(/\s\s+/g, '');
+      
       //if white space is included between titles use reg ex:
       // .replace(/\s\s+/g, '');
       const link = $(el)
+        .children('.post_title')        
         .find("a")
         .attr("href");
 
