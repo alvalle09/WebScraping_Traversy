@@ -26,8 +26,12 @@ request('https://johnpapa.net/', (error, response, html) => {
 
         $('.navMenu_list a').each((i, el) => {
             const item = $(el).text();
+            const link = $(el).attr('href');
 
-            console.log(item);
+            //console.log(item);
+            //console.log(link);
+            console.log(item, link);
+
         });
 
     }
